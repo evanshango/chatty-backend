@@ -40,7 +40,7 @@ exports.registerUser = (req, res) => {
         if (err.code === 'auth/email-already-in-use') {
             return res.status(400).json({email: 'Email is already in use'})
         } else {
-            return res.status(500).json({error: err.code});
+            return res.status(500).json({general: 'Something went wrong. Pleas try again'});
         }
     })
 };
@@ -57,11 +57,9 @@ exports.signin = (req, res) => {
         return data.user.getIdToken();
     }).then(token => {
         return res.json({token})
-    }).catch(error => {
-        console.error(error);
-        if (error.code === 'auth/wrong-password') {
-            return res.status(403).json({general: 'Wrong credentials. Please try again'})
-        } else return res.status(500).json({error: error.code})
+    }).catch(err => {
+        console.error(err);
+        return res.status(403).json({general: 'Wrong credentials. Please try again'})
     })
 };
 //edit user profile
@@ -151,7 +149,7 @@ exports.uploadImage = (req, res) => {
 exports.getUserDetails = (req, res) => {
     let userData = {};
     database.doc(`/users/${req.params.handle}`).get().then(doc => {
-        if (doc.exists){
+        if (doc.exists) {
             userData.user = doc.data();
             return database.collection('screams').where('handle', '==', req.params.handle).orderBy('createdAt', 'desc')
                 .get();

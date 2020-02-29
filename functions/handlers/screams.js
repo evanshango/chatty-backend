@@ -12,7 +12,7 @@ exports.getAllScreams = (req, res) => {
                 createdAt: doc.data().createdAt,
                 userImage: doc.data().userImage,
                 likeCount: doc.data().likeCount,
-                commentCount: doc.data().commentCount
+                commentCount: doc.data().commentCount,
             });
         });
         return res.json(screams);
@@ -46,7 +46,8 @@ exports.getScream = (req, res) => {
         }
         screamData = doc.data();
         screamData.screamId = doc.id;
-        return database.collection('comments').orderBy('createdAt', 'desc').where('screamId', '==', req.params.screamId).get();
+        return database.collection('comments').orderBy('createdAt', 'desc')
+            .where('screamId', '==', req.params.screamId).get();
     }).then(data => {
         screamData.comments = [];
         data.forEach(doc => {
@@ -60,7 +61,7 @@ exports.getScream = (req, res) => {
 };
 
 exports.commentOnScream = (req, res) => {
-    if (req.body.body.trim() === '') return res.status(400).json({error: 'Must not be empty'});
+    if (req.body.body.trim() === '') return res.status(400).json({comment: 'Must not be empty'});
     const newComment = {
         body: req.body.body,
         createdAt: new Date().toISOString(),
