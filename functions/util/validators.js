@@ -1,14 +1,14 @@
-const isEmail = (email) => {
+const isEmail = email => {
     const regExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
     return !!email.match(regExp);
 
 };
-const isEmpty = (string) => {
+const isEmpty = string => {
     return string.trim() === '';
 
 };
 
-exports.validateRegData = (data) => {
+exports.validateRegData = data => {
     let errors = {};
 
     if (isEmpty(data.email)) {
@@ -23,9 +23,21 @@ exports.validateRegData = (data) => {
     return {errors, valid: Object.keys(errors).length === 0}
 };
 
-exports.validateSignInData = (data) => {
+exports.validateSignInData = data => {
     let errors = {};
     if (isEmpty(data.email)) errors.email = 'Must not be empty';
     if (isEmpty(data.password)) errors.password = 'Must not be empty';
     return {errors, valid: Object.keys(errors).length === 0}
+};
+
+exports.reduceUserDetails = data => {
+  let userDetails = {};
+  if (!isEmpty(data.bio.trim())) userDetails.bio = data.bio;
+  if (!isEmpty(data.website.trim())) {
+      if (data.website.trim().substring(0, 4) !== 'http'){
+          userDetails.website = `http://${data.website.trim()}`
+      } else userDetails.website = data.website
+  }
+    if (!isEmpty(data.location.trim())) userDetails.location = data.location;
+    return userDetails;
 };

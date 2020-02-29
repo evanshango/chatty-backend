@@ -2,7 +2,7 @@ const {admin, database} = require('../util/admin');
 const config = require('../util/config');
 const firebase = require('firebase');
 firebase.initializeApp(config);
-const {validateRegData, validateSignInData} = require('../util/validators');
+const {validateRegData, validateSignInData, reduceUserDetails} = require('../util/validators');
 
 exports.registerUser = (req, res) => {
     const newUser = {
@@ -66,6 +66,16 @@ exports.signin = (req, res) => {
     })
 };
 
+exports.addUserDetails = (req, res) => {
+    let userDetails = reduceUserDetails(req.body);
+    database.doc(`/users/${req.user.handle}`).update(userDetails).then(() => {
+        return res.json({message: 'Profile details updated'})
+    }).catch(err => {
+        console.error(err);
+        return res.status(500).json({error: err.code})
+    })
+};
+
 exports.uploadImage = (req, res) => {
     const BusBoy = require('busboy');
     const path = require('path');
@@ -76,7 +86,7 @@ exports.uploadImage = (req, res) => {
     let imageFileName;
     let imageToUpload = {};
     busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
-        if (mimetype !== 'image/jpeg' && mimetype !== 'image/png'){
+        if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
             return res.status(400).json({error: 'Wrong file type submitted'})
         }
         const imageExtension = filename.split('.')[filename.split('.').length - 1];
