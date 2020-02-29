@@ -50,7 +50,6 @@ exports.signin = (req, res) => {
         email: req.body.email,
         password: req.body.password
     };
-
     const {valid, errors} = validateSignInData(user);
     if (!valid) return res.status(400).json(errors);
 
@@ -79,7 +78,7 @@ exports.addUserDetails = (req, res) => {
 exports.getAuthenticatedUser = (req, res) => {
     let userData = {};
     database.doc(`/users/${req.user.handle}`).get().then(doc => {
-        if (doc.exists){
+        if (doc.exists) {
             userData.credentials = doc.data();
             return database.collection('likes').where('handle', '==', req.user.handle).get()
         }
@@ -87,6 +86,21 @@ exports.getAuthenticatedUser = (req, res) => {
         userData.likes = [];
         data.forEach(doc => {
             userData.likes.push(doc.data)
+        });
+        return database.collection('notifications')
+            .where('recipient', '==', req.user.handle).orderBy('createdAt', 'desc').limit(10).get();
+    }).then(data => {
+        userData.notifications = [];
+        data.forEach(doc => {
+            userData.notifications.push({
+                notificationId: doc.id,
+                recipient: doc.data().recipient,
+                sender: doc.data().sender,
+                read: doc.data().read,
+                screamId: doc.data().screamId,
+                type: doc.data().type,
+                createdAt: doc.data().createdAt
+            })
         });
         return res.json(userData)
     }).catch(err => {
