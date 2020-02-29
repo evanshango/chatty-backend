@@ -4,11 +4,7 @@
     <list default="true" id="d9443bab-9b5a-420f-8a72-3167e5e69b60" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/handlers/screams.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/handlers/screams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/handlers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/handlers/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/functions/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/util/fbAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/util/fbAuth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +63,7 @@
       <workItem from="1582925684597" duration="9129000" />
       <workItem from="1582971157377" duration="589000" />
       <workItem from="1582971882409" duration="8670000" />
-      <workItem from="1582980583796" duration="13588000" />
+      <workItem from="1582980583796" duration="15561000" />
     </task>
     <servers />
   </component>
