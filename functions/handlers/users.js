@@ -44,7 +44,7 @@ exports.registerUser = (req, res) => {
         }
     })
 };
-
+//handle user sign in
 exports.signin = (req, res) => {
     const user = {
         email: req.body.email,
@@ -64,7 +64,7 @@ exports.signin = (req, res) => {
         } else return res.status(500).json({error: error.code})
     })
 };
-
+//edit user profile
 exports.addUserDetails = (req, res) => {
     let userDetails = reduceUserDetails(req.body);
     database.doc(`/users/${req.user.handle}`).update(userDetails).then(() => {
@@ -108,7 +108,7 @@ exports.getAuthenticatedUser = (req, res) => {
         return res.status(500).json({error: err.code})
     })
 };
-
+//upload user image
 exports.uploadImage = (req, res) => {
     const BusBoy = require('busboy');
     const path = require('path');
@@ -146,4 +146,48 @@ exports.uploadImage = (req, res) => {
         })
     });
     busboy.end(req.rawBody)
+};
+//get any user details
+exports.getUserDetails = (req, res) => {
+    let userData = {};
+    database.doc(`/users/${req.params.handle}`).get().then(doc => {
+        if (doc.exists){
+            userData.user = doc.data();
+            return database.collection('screams').where('handle', '==', req.params.handle).orderBy('createdAt', 'desc')
+                .get();
+        } else {
+            return res.status(404).json({error: 'User not found'})
+        }
+    }).then(data => {
+        userData.screams = [];
+        data.forEach(doc => {
+            userData.screams.push({
+                body: doc.data().body,
+                createdAt: doc.data().createdAt,
+                userImage: doc.data().userImage,
+                commentCount: doc.data().commentCount,
+                likeCount: doc.data().likeCount,
+                handle: doc.data().handle,
+                screamId: doc.id,
+            })
+        });
+        return res.json(userData)
+    }).catch(err => {
+        console.error(err);
+        return res.status(500).json({error: err.code})
+    })
+};
+//mark notification as read
+exports.markNotificationsRead = (req, res) => {
+    let batch = database.batch();
+    req.body.forEach(notId => {
+        const not = database.doc(`/notifications/${notId}`);
+        batch.update(not, {read: true});
+    });
+    batch.commit().then(() => {
+        return res.json({message: 'Notifications marked as read'})
+    }).catch(err => {
+        console.error(err);
+        return res.status(500).json({error: err.code})
+    })
 };

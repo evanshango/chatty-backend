@@ -5,7 +5,9 @@ const {database} = require('./util/admin');
 const {
     getAllScreams, creatScream, getScream, commentOnScream, likeScream, unlikeScream, deleteScream
 } = require('./handlers/screams');
-const {registerUser, signin, uploadImage, addUserDetails, getAuthenticatedUser} = require('./handlers/users');
+const {
+    registerUser, signin, uploadImage, addUserDetails, getAuthenticatedUser, getUserDetails, markNotificationsRead
+} = require('./handlers/users');
 
 //scream routes
 app.get('/screams', getAllScreams);
@@ -23,6 +25,8 @@ app.post('/login', signin);
 app.post('/user/image', fbAuth, uploadImage);
 app.post('/user', fbAuth, addUserDetails);
 app.get('/user', fbAuth, getAuthenticatedUser);
+app.get('/user/:handle', getUserDetails);
+app.post('/notifications', fbAuth, markNotificationsRead);
 
 exports.api = functions.https.onRequest(app);
 
