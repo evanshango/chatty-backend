@@ -9,6 +9,7 @@ chatty-9a36f1a239e0.json
 
 # Firebase cache
 .firebase/
+.idea/
 
 # Firebase config
 
