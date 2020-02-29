@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d9443bab-9b5a-420f-8a72-3167e5e69b60" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1YSAaDfSGwWfpBm2XsylN1Hl3qR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.eslint.settings.ESLintSettingsPage" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Evans\Documents\Development\React\chatty\chatty-backend" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9443bab-9b5a-420f-8a72-3167e5e69b60" name="Default Changelist" comment="" />
+      <created>1582925683031</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582925683031</updated>
+      <workItem from="1582925684597" duration="9129000" />
+      <workItem from="1582971157377" duration="589000" />
+      <workItem from="1582971882409" duration="647000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="27" key="#Notifications" timestamp="1582971915892">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="27" key="#Notifications/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1582971915892" />
+    <state x="263" y="104" key="IDE.errors.dialog" timestamp="1582971963429">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="263" y="104" key="IDE.errors.dialog/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1582971963429" />
+    <state x="184" y="12" key="SettingsEditor" timestamp="1582971953354">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="12" key="SettingsEditor/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1582971953354" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1582972376733">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1582972376733" />
+  </component>
+</project>
