@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9443bab-9b5a-420f-8a72-3167e5e69b60" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/handlers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions/handlers/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/functions" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -29,6 +29,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -64,6 +65,8 @@
       <workItem from="1582971882409" duration="8670000" />
       <workItem from="1582980583796" duration="29425000" />
       <workItem from="1583015853319" duration="599000" />
+      <workItem from="1583058690081" duration="619000" />
+      <workItem from="1583339783179" duration="313000" />
     </task>
     <servers />
   </component>
@@ -79,6 +82,9 @@
         <option value="1" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="27" key="#Notifications" timestamp="1582971915892">
@@ -121,9 +127,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1582985709357" />
-    <state x="339" y="165" key="run.anything.popup" timestamp="1583011089288">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="1842" y="235" key="run.anything.popup" timestamp="1583058750614">
+      <screen x="1366" y="0" width="1920" height="1050" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738/1366.0.1920.1050@0.0.1366.738" timestamp="1583011089288" />
+    <state x="1842" y="235" key="run.anything.popup/0.0.1366.738/1366.0.1920.1050@1366.0.1920.1050" timestamp="1583058750614" />
   </component>
 </project>

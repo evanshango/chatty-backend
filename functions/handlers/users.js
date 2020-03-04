@@ -83,7 +83,7 @@ exports.getAuthenticatedUser = (req, res) => {
     }).then(data => {
         userData.likes = [];
         data.forEach(doc => {
-            userData.likes.push(doc.data)
+            userData.likes.push(doc.data())
         });
         return database.collection('notifications')
             .where('recipient', '==', req.user.handle).orderBy('createdAt', 'desc').limit(10).get();
