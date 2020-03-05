@@ -1,6 +1,8 @@
 const functions = require('firebase-functions');
 const app = require('express')();
 const fbAuth = require('./util/fbAuth');
+const cors = require('cors');
+app.use(cors());
 const {database} = require('./util/admin');
 const {
     getAllScreams, creatScream, getScream, commentOnScream, likeScream, unlikeScream, deleteScream
