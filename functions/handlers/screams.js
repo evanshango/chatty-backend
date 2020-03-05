@@ -28,7 +28,7 @@ exports.creatScream = (req, res) => {
         handle: req.user.handle,
         createdAt: new Date().toISOString(),
         userImage: req.user.imageUrl,
-        likCount: 0,
+        likeCount: 0,
         commentCount: 0
     };
     database.collection('screams').add(newScream).then(doc => {
